@@ -1,3 +1,27 @@
 # Application properties that need to be
 # embedded within the web application can be included here
-
+spring:
+  mail:
+    host: localhost
+    port: 25
+cas:
+  authn:
+    attribute-repository:
+      stub:
+        attributes:
+          mail: misagh@somewhere.com
+    json:
+      location: classpath:/passwords.json
+    mfa:
+      triggers:
+        global:
+          global-provider-id: mfa-simple
+      simple:
+        token:
+          core:
+            time-to-kill-in-seconds: 600
+        mail:
+          subject: CAS MFA Token
+          from: admin@cas.com
+          text: OTP is ${token}
+          attributeName: email
