@@ -1,5 +1,10 @@
-Apereo CAS WAR Overlay Template
+Apereo CAS with 2 users and simple second factor
 =====================================
+
+This configuration includes 2 users: bob and scott [passwords.json](src/main/resources/passwords.json)
+
+To test it you have to set up SMTP server on port 25, e.g. use [MockMock](https://github.com/tweakers/MockMock)
+
 
 WAR Overlay Type: `cas-overlay`
 
